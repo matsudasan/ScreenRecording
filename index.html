@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>画面録画アプリ</title>
+</head>
+
+<body>
+    <div class="conainer">
+        <video id="video" autoplay></video>
+        <div class="buttons">
+            <button id="start">録画を始める</button>
+            <button id="stop">録画を止める</button>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.8/dist/ffmpeg.min.js"></script>
+<script src="app.js"></script>
+
+</html>

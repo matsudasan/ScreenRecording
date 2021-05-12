@@ -1,0 +1,41 @@
+.conainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#video {
+    border: 1px solid black;
+    width: 98%;
+    max-width: 860px;
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+button{
+    border-radius: 100vh;
+    border-style: none;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+}
+
+#start{
+    background-color: #eb6100;
+}
+
+#start:hover{
+    background-color: #f56500;
+}
+
+#stop{
+    background-color:#005FFF ;
+}
+#stop:hover{
+    background-color: #2C7CFF;
+}

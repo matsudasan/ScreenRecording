@@ -4,6 +4,7 @@ const ffmpeg = createFFmpeg({ log: true, progress: p => displayProgress(p) });
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const video = document.getElementById('video');
+const encode = document.getElementById('encode');
 let stream;
 let mediaRecorder;
 const chunks = [];
@@ -42,13 +43,14 @@ const saveCapture = () => {
         const captureUrl = new Blob([capture.buffer], { type: 'video/mp4' });
 
         if (window.navigator.msSaveOrOpenBlob) { //IEをサポート
-            window.navigator.msSaveBlob(capture, filename);
+            window.navigator.msSaveBlob(captureUrl, filename);
         } else {
             const elem = document.createElement('a');
             elem.href = window.URL.createObjectURL(captureUrl);
             elem.download = 'キャプチャー';
             elem.click();
         }
+        encode.innerText = "変換が終了したのでダウンロードしました"
     }
 }
 
@@ -66,8 +68,7 @@ const encodeCapture = async (blob) => {
 }
 
 const displayProgress = (progress) => {
-    console.log(progress)
-    stopButton.innerText = Math.round(100 * progress.ratio) + '%'
+    encode.innerText = "mp4に変換中です"
 }
 
 startButton.addEventListener('click', startCapture);

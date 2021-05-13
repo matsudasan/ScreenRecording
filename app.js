@@ -73,3 +73,5 @@ const displayProgress = (progress) => {
 
 startButton.addEventListener('click', startCapture);
 stopButton.addEventListener('click', stopCapture);
+
+//window.onload=()=>console.log(navigator.mediaDevices.getSupportedConstraints())
